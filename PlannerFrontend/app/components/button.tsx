@@ -1,8 +1,7 @@
-export default function Button({variant}:{ variant: string }) {
+export default function Button({variant, text}:{ variant: string, text: string}) {
   
-  //button style propp
+  //button style prop
   let color;
-  
   switch (`${variant}`) {
     case "default":
       color = "#587557";
@@ -11,10 +10,12 @@ export default function Button({variant}:{ variant: string }) {
       color = "#E01541";
       break;
     default:
-      color = "#FF00FF" //if error show bright magenta
+      color = "#FF00FF" //if prop not defined properly show bright magenta
   }
 
   //button usage prop
   
-  return <button className={`w-[5rem] h-[2rem] bg-[${color}]`}></button>;
+  // :(
+
+  return <button style={{backgroundColor: color, width: "18rem", height: "3em", borderRadius:"15px" }}>{text}</button>;
 }
