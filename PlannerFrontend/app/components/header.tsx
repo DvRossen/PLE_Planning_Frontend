@@ -6,6 +6,12 @@ export default function Header() {
     width: "100vw", height: "100px", padding:"8px", 
     display: "flex", justifyContent: "space-between", alignItems: "center", 
     backgroundColor: "#B7ADCF"}}>
+      
+      <Button
+      usage="routeHome"
+      variant="default"
+      text="home"
+      />
 
     </div>
   );

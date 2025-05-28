@@ -1,4 +1,4 @@
-export default function Button({variant, text}:{ variant: string, text: string}) {
+export default function Button({usage, variant, text}:{ usage: string, variant: string, text: string}) {
   
   //button style prop
  
@@ -16,8 +16,16 @@ export default function Button({variant, text}:{ variant: string, text: string})
   
 
   //button usage prop
-function clickhandler() {
-  console.log(`you've clicked ${text}`)}
+  function clickhandler() {
+  switch (`${usage}`){
+    case "test":
+  console.log(`you've clicked ${text}`)
+  break;
+    default:
+      console.log(`Button improperly configured`) //if prop not defined properly give error message
+  } 
+}
+ 
 
-  return <button className={`w-[18rem] h-[3em] ${color} hover:saturate-300 rounded-xl cursor-pointer`} onClick={clickhandler}>{text}</button>;
+return <button className={`w-[18rem] h-[3em] ${color} hover:saturate-300 rounded-xl cursor-pointer`} onClick={clickhandler}>{text}</button>;
 }
