@@ -3,12 +3,26 @@
 @theme static {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    
-    /* color usage */
-  --color-danger: #E01541;
-  --color-default: #587557;
-  --color-error: #FF00FF;
 
+  /* button colors*/
+  --color-danger: #e01541;
+  --color-default: #587557;
+  --color-error: #ff00ff;
+
+  /*container colors*/
+  --color-sidebar: #e9d8af;
+  --color-mainpage: #f2e8cf;
+}
+
+:root {
+  /*header vars*/
+  --header-padding: 8px;
+  --header-height: 100px;
+  --header-width: 100vw;
+
+  /*side-bar vars*/
+  --side-bar-width: 25vw;
+  --side-bar-min-width: 250px;
 }
 
 html,
@@ -18,4 +32,23 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+.header {
+  height: var(--header-height);
+  min-height: var(--header-min-height);
+  width: var(--header-width);
+  padding: var(--header-padding);
+}
+
+.content {
+  width: calc(100% - var(--side-bar-width));
+  min-width: calc(100% - var(--side-bar-min-width));
+}
+
+.side-bar {
+  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-min-height));
+  width: 25vw;
+  min-width: 250px;
 }
